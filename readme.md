@@ -4,10 +4,6 @@
   <img src="frontend/public/icons/icon-128.png" alt="Cue logo" width="50" />
 </p>
 
-<p align="center">
-  Ask questions about YouTube videos using Retrieval-Augmented Generation (RAG).
-</p>
-
 Cue is a Chrome Side Panel extension powered by a FastAPI backend that retrieves relevant transcript passages and generates context-grounded answers using Google Gemini.
 
 ## Features
