@@ -4,7 +4,7 @@
   <img src="frontend/public/icons/icon-128.png" alt="Cue logo" width="50" />
 </p>
 
-Cue is a Chrome Side Panel extension powered by a FastAPI backend that retrieves relevant transcript passages and generates context-grounded answers using Google Gemini.
+Cue is a YouTube AI assistant that uses hybrid retrieval and Google Gemini to answer questions from video transcripts, with clickable timestamps for instant navigation
 
 ## Demo
 
