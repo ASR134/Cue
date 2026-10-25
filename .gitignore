@@ -1,0 +1,7 @@
+.env
+ytc_venv/
+__pycache__/
+node_modules/
+dist/
+build/
+.vscode/
