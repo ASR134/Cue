@@ -6,6 +6,10 @@
 
 Cue is a Chrome Side Panel extension powered by a FastAPI backend that retrieves relevant transcript passages and generates context-grounded answers using Google Gemini.
 
+## Demo
+
+https://github.com/user-attachments/assets/1458cb3b-45db-493f-a1b7-b7b646148de0
+
 ## Features
 
 - **Transcript Processing:** Fetches manually created English captions, falling back to auto-generated captions.
