@@ -4,11 +4,11 @@
   <img src="frontend/public/icons/icon-128.png" alt="Cue logo" width="50" />
 </p>
 
-Cue is a YouTube AI assistant that uses hybrid retrieval and Google Gemini to answer questions from video transcripts, with clickable timestamps for instant navigation
+Cue is a YouTube AI assistant that uses hybrid retrieval and Google Gemini to answer questions from video transcripts, with clickable timestamps for instant navigation.
 
 ## Demo
 
-https://github.com/user-attachments/assets/1458cb3b-45db-493f-a1b7-b7b646148de0
+[Watch Cue Demo](https://github.com/user-attachments/assets/1458cb3b-45db-493f-a1b7-b7b646148de0)
 
 ## Features
 
@@ -17,11 +17,12 @@ https://github.com/user-attachments/assets/1458cb3b-45db-493f-a1b7-b7b646148de0
 - **Hybrid Retrieval:** Combines FAISS semantic search and BM25 keyword search using an ensemble retriever.
 - **Question Answering:** Generates answers grounded in retrieved transcript context using Google Gemini.
 - **Timestamp Navigation:** Jump directly to relevant moments in YouTube videos from answer timestamps.
-- **Chrome Extension:** Minimalist side panel built with React, TypeScript, Vite, and Chrome Extension Manifest V3.
+- **RAG Evaluation:** Evaluates the faithfulness of generated answers against retrieved transcript context using Ragas to assess whether answers are grounded in the provided information.
+- **Chrome Extension:** A minimalist side panel built with React, TypeScript, Vite, and Chrome Extension Manifest V3.
 
 ## Tech Stack
 
-**Backend:** Python, FastAPI, LangChain, FAISS, BM25, Sentence Transformers, Google Gemini
+**Backend:** Python, FastAPI, LangChain, FAISS, BM25, Sentence Transformers, Google Gemini, Ragas
 
 **Frontend:** React, TypeScript, Vite, Chrome Extension APIs
 
@@ -42,7 +43,7 @@ From the project root:
 ```powershell
 cd backend
 ..\ytc_venv\Scripts\activate
-uvicorn app.main:app --reload 
+uvicorn app.main:app --reload
 ```
 
 ### 3. Build the Extension
@@ -61,6 +62,16 @@ Open `chrome://extensions/`, enable **Developer mode**, click **Load unpacked**,
 2. Open Cue and click **Prepare video** to process and index the transcript.
 3. Ask questions about the video.
 4. Click timestamps in answers to jump to relevant moments.
+
+## RAG Evaluation
+
+Cue's RAG pipeline can be evaluated using **Ragas** to assess the quality of generated answers.
+
+- **Faithfulness:** Measures whether the generated answer is supported by the retrieved transcript context.
+- **Evaluation Dataset:** Uses a prepared dataset of video IDs, questions, retrieved contexts, and generated answers.
+- **Evaluation Results:** Saves evaluation outputs as JSON for further inspection and analysis.
+
+The evaluation workflow uses a dataset file and stores its results in the `results/` directory. Evaluator LLM calls require a configured API key and may be subject to provider rate limits and quotas.
 
 ## API Endpoints
 
